@@ -1,0 +1,17 @@
+name: Issue or PR Comment Trigger
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  print-comment-info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Display comment details
+        run: |
+          echo "A comment was created!"
+          echo "Issue or PR Number: ${{ github.event.issue.number }}"
+          echo "Comment Author: ${{ github.event.comment.user.login }}"
+          echo "Comment Body:"
+          echo "${{ github.event.comment.body }}"
