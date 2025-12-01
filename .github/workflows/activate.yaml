@@ -1,0 +1,12 @@
+name: Activate Actions
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  activate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test run
+        run: echo "GitHub Actions are now activated!"
